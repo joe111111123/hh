@@ -1,0 +1,83 @@
+#importing the packages
+
+import tkinter as tk
+
+from tkinter import *
+
+from tkinter import messagebox
+
+from PIL import ImageTk, Image
+
+#creating the root window
+
+root=tk.Tk()
+
+root.minsize(700,500)#setting the size of the
+
+                    #main window
+
+root.title("Tasty Pizza")#title of the window
+
+
+#opening 1st image file
+
+image1 = Image.open("H:\\picture\\pizza1.png")
+
+#resizing the image
+
+image1 = image1.resize((150, 150), Image.ANTIALIAS)
+
+test = ImageTk.PhotoImage(image1)
+
+#opening 2nd image file
+
+image2 = Image.open("H:\\picture\\pizza2.png")
+
+#resizing the image
+
+image2 = image2.resize((150, 150), Image.ANTIALIAS)
+
+test2 = ImageTk.PhotoImage(image2)
+
+#setting 1st image in label l3
+
+l3=tk.Label(root,image=test)
+
+l3.place(x=50,y=10)#position the label
+
+#setting 2nd image in label l4
+
+l4=tk.Label(root,image=test2)
+
+l4.place(x=350,y=10)#position the label
+
+#displaying a menu for pizza using a label with font and size of text
+
+l5=tk.Label(root,text="Pizza: Beef pizza, Chicken pizza, Pork pizza",font=("Arial", 15))
+
+l5.place(x=50,y=200)
+
+#displaying a menu for hot dog
+
+l6=tk.Label(root,text="Hot dog: Beef hot dog, Pork hot dog, Turkey hot dog",font=("Arial", 15))
+
+l6.place(x=50,y=230)
+
+
+l1=tk.Label(root,text="Enter pizza names(using comma)",font=("Arial", 15))
+
+l1.place(x=50,y=280)
+
+#entry box with font  and size
+
+t1=tk.Entry(root,font=("Arial", 15))
+
+t1.place(x=380,y=280)#position of entry box
+
+l2=tk.Label(root,text="Enter hot dog names(using comma)",font=("Arial", 15))
+
+l2.place(x=50,y=310)
+
+t2=tk.Entry(root,font=("Arial", 15))
+
+t2.place(x=380,y=310)
